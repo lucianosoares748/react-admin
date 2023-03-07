@@ -1,7 +1,20 @@
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <main className="content"></main>
+        </div>
+        ;
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  );
 }
 
 export default App;
